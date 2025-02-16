@@ -1,2 +1,2 @@
-# New
-Tää on uus idea.
+# Rasputin 
+Rasputin fork bomb. Running the program inside a VM is recommended. FOR EDUCATIONAL PURPOSES ONLY!
