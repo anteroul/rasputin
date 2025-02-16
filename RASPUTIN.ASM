@@ -23,5 +23,5 @@ _child_process:
     int 0x80
 
 section .data
-    message db "Tää on uus idea!", 0xA
+    message db "RESISTANCE IS FUTILE!", 0xA
     message_len equ $ - message
