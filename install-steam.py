@@ -1,4 +1,4 @@
-# © 2025 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.
+# (C) 2025 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.
 
 import os
 import shutil
